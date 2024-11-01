@@ -1,0 +1,263 @@
+/* Configurações Globais */
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    background-image: url('assets/svg/Vector\ 1.svg'), url('assets/svg/Vector\ 2.svg');
+    background-size: 18% auto, 30% auto;
+    background-position: top left, bottom right;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+/* Estrutura Principal */
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    flex: 1;
+    gap: 50px; /* Aumenta o espaço entre as seções */
+}
+
+/* Animação de Fade-in com Slide */
+@keyframes fade-slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Seção de Boas-vindas */
+.welcome-section {
+    max-width: 50%;
+    animation: fade-slide-in 0.5s ease;
+}
+
+.welcome-section h1 {
+    font-size: 64px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.welcome-section p {
+    font-size: 24px;
+    margin: 0;
+}
+
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: transparent;
+    color: #333333;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.buttons button:hover {
+    transform: scale(1.05);
+}
+
+.buttons .active-btn {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Alinha o formulário à direita */
+.form-section {
+    display: flex;
+    justify-content: flex-start;
+    flex: 1;
+    max-width: 400px; /* Define uma largura máxima para o formulário */
+}
+
+/* Seções de Login e Cadastro */
+.login-section, .signup-section {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fade-slide-in 0.5s ease;
+}
+
+.login-section button,
+.signup-section button {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s ease;
+    margin-top: 10px;
+}
+
+.login-section button:hover,
+.signup-section button:hover {
+    transform: scale(1.05);
+}
+
+.login-section a,
+.signup-section a {
+    margin-top: 15px;
+    display: inline-block;
+    color: #014E04;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login-section a:hover,
+.signup-section a:hover {
+    color: #006600;
+    text-decoration: underline;
+}
+
+/* Estilo dos Campos de Entrada no Formulário */
+.input-container,
+.phone-input,
+.input-password-container {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Estilo para os Campos de Senha com Ícone de Olho */
+.input-password-container {
+    position: relative;
+    width: 100%;
+}
+
+.input-password {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    padding-right: 40px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.toggle-password img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Estilo de Foco */
+.input-password:focus {
+    border-color: #014E04;
+}
+
+.input-container input,
+.phone-input select,
+.phone-input input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    width: 100%;
+}
+
+.phone-input select {
+    width: 30%;
+}
+
+.phone-input input {
+    width: 70%;
+}
+
+/* Alinhamento ao Foco */
+.input-container input:focus,
+.phone-input select:focus,
+.phone-input input:focus,
+.input-password:focus {
+    border-color: #014E04;
+}
+
+/* Estilo do Footer */
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 40px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fade-slide-in 0.5s ease;
+}
+
+.footer .logo img {
+    height: 20px;
+}
+
+.footer .social-icons a img {
+    height: 45px;
+    width: 45px;
+    margin: 2px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+        align-items: center;
+    }
+
+    .welcome-section {
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .form-section {
+        width: 100%;
+        max-width: 400px;
+        justify-content: center;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
