@@ -1,0 +1,287 @@
+/* Configurações Globais */
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    background-image: url('assets/Vector\ 1.svg'), url('assets/Vector\ 2.svg');
+    background-size: 18% auto, 30% auto;
+    background-position: top left, bottom right;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    flex-grow: 1;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Animação de fade-in com slide */
+@keyframes fade-slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Seção de Boas-vindas */
+.welcome-section {
+    max-width: 50%;
+    animation: fade-slide-in 0.5s ease;
+}
+
+.welcome-section h1 {
+    font-size: 64px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.welcome-section p {
+    font-size: 24px;
+    margin: 0;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: transparent;
+    color: #333333;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.buttons button:hover {
+    transform: scale(1.05);
+}
+
+.buttons .active-btn {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Seções de Login e Cadastro */
+.login-section, .signup-section {
+    width: 100%;
+    max-width: 320px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fade-slide-in 0.5s ease;
+}
+
+.login-section button,
+.signup-section button {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s ease;
+    margin-top: 10px;
+}
+
+.login-section button:hover,
+.signup-section button:hover {
+    transform: scale(1.05);
+}
+
+.login-section a,
+.signup-section a {
+    margin-top: 15px;
+    display: inline-block;
+    color: #014E04;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login-section a:hover,
+.signup-section a:hover {
+    color: #006600;
+    text-decoration: underline;
+}
+
+/* Estilo dos campos de entrada no formulário */
+.input-container,
+.phone-input,
+.input-password-container {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Estilo para os campos de senha com ícone de olho */
+.input-password-container {
+    position: relative;
+    width: 100%;
+}
+
+.input-password {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    padding-right: 40px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.toggle-password img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Estilo de foco */
+.input-password:focus {
+    border-color: #014E04;
+}
+
+.input-container input,
+.phone-input select,
+.phone-input input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    width: 100%;
+}
+
+.phone-input select {
+    width: 30%;
+}
+
+.phone-input input {
+    width: 70%;
+}
+
+/* Alinhamento ao foco */
+.input-container input:focus,
+.phone-input select:focus,
+.phone-input input:focus,
+.input-password:focus {
+    border-color: #014E04;
+}
+
+/* Estilo do footer */
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 40px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fade-slide-in 0.5s ease;
+}
+
+.footer .logo img {
+    height: 20px;
+}
+
+.footer .social-icons a {
+    margin-left: 8px;
+}
+
+.footer .social-icons a img {
+    height: 45px;
+    width: 45px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .welcome-section {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .login-section, .signup-section {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Estilos para o contêiner de notificações */
+#notification-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Estilos para as mensagens de notificação */
+.notification {
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fade-in 0.5s ease, fade-out 0.5s ease 3s;
+}
+
+.notification.success {
+    background-color: #28a745;
+}
+
+.notification.error {
+    background-color: #dc3545;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-out {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-10px); }
+}

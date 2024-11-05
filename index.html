@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HortiApp</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-section">
+            <p>BEM-VINDO AO</p>
+            <h1>HORTIAPP</h1>
+            <div class="buttons">
+                <button class="login-btn active-btn" onclick="showLogin()">Login</button>
+                <button class="signup-btn" onclick="showSignup()">Cadastre-se</button>
+            </div>
+        </div>
+
+        <!-- Seção de Login -->
+        <div class="login-section" id="login-section">
+            <h2>LOGIN</h2>
+            <div class="phone-input">
+                <select id="ddi" name="ddi" onchange="atualizarMascaraTelefone('telefone')">
+                    <option value="+55">+55</option> <!-- Apenas DDI +55 -->
+                </select>
+                <input type="tel" id="telefone" placeholder="Digite seu telefone" oninput="mascararTelefone(this)" />
+            </div>
+            <div class="input-password-container">
+                <input type="password" id="senha-login" placeholder="Digite sua senha" class="input-password" />
+                <span class="toggle-password" onclick="togglePassword('senha-login', 'toggle-senha-login')">
+                    <img src="assets/svg/eye_closed_icon.svg" alt="Mostrar senha" id="toggle-senha-login"/>
+                </span>
+            </div>
+            <button class="btn btn-dark mt-3" onclick="validarLogin()">Entrar</button>
+            <a href="recuperacao_senha.html">Esqueceu sua senha?</a>
+        </div>
+
+        <!-- Seção de Cadastro -->
+        <div class="signup-section" id="signup-section" style="display: none;">
+            <h2>CADASTRO</h2>
+            <div class="input-container">
+                <input type="text" id="nome" placeholder="Digite seu nome" />
+            </div>
+            <div class="input-container">
+                <input type="email" id="email" placeholder="Digite seu email" />
+            </div>
+            <div class="phone-input">
+                <select id="ddi" name="ddi" onchange="atualizarMascaraTelefone('telefone-cadastro')">
+                    <option value="+55">+55</option> <!-- Apenas DDI +55 -->
+                </select>
+                <input type="tel" id="telefone-cadastro" placeholder="Digite seu telefone" oninput="mascararTelefone(this)" />
+            </div>
+            <div class="input-container">
+                <input type="text" id="cpf" placeholder="Digite seu CPF" oninput="mascararCPF(this)" maxlength="14"/>
+            </div>
+            <div class="input-container">
+                <input type="date" id="nascimento" placeholder="Data de Nascimento" />
+            </div>
+            <div class="input-password-container">
+                <input type="password" id="senha-cadastro" placeholder="Digite sua senha" class="input-password" />
+                <span class="toggle-password" onclick="togglePassword('senha-cadastro', 'toggle-senha-cadastro')">
+                    <img src="assets/svg/eye_closed_icon.svg" alt="Mostrar senha" id="toggle-senha-cadastro"/>
+                </span>
+            </div>
+            <div class="input-password-container">
+                <input type="password" id="confirmar-senha" placeholder="Confirme sua senha" class="input-password" />
+            </div>
+            <button class="btn btn-dark mt-3" onclick="validarCadastro()">Cadastrar</button>
+            <a href="#" onclick="showLogin()">Já tem uma conta? Faça login</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="logo">
+            <img src="assets/svg/logo.svg" alt="HORTI+ Logo">
+        </div>
+        <div>
+            © 2024 Horti＋ • Todos os direitos reservados.
+        </div>
+        <div class="social-icons">
+            <a href="#"><img src="assets/svg/fb_icon.svg" alt="Facebook Icon"></a>
+            <a href="#"><img src="assets/svg/ig_icon.svg" alt="Instagram Icon"></a>
+            <a href="#"><img src="assets/svg/lk_icon.svg" alt="LinkedIn Icon"></a>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+    <!-- Contêiner de Notificações -->
+    <div id="notification-container"></div>
+</body>
+</html>

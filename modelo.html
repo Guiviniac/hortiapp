@@ -1,0 +1,207 @@
+<html>
+<head>
+    <title>HortiApp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Inter, sans-serif;
+            background-image: url('Background.svg'); /* Added background image */
+            background-size: 100% auto;
+            background-position: top centerr;
+            background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+            flex-grow: 1;
+            width: 90%; /* Increased width */
+            margin: 0 auto; /* Centered the container */
+        }
+        .welcome-section {
+            max-width: 50%;
+        }
+        .welcome-section h1 {
+            font-size: 64px; /* Increased font size */
+            font-weight: bold; /* Increased font weight */
+            margin: 0;
+        }
+        .welcome-section p {
+            font-size: 24px;
+            margin: 0;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            border: 1px solid #333333; /* Changed stroke to 1px */
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: transparent; /* Default background color */
+            color: #333333; /* Default text color */
+        }
+        .buttons .active-btn {
+            background-color: #333333;
+            color: #ffffff;
+        }
+        .login-section, .signup-section {
+            width: 400px; /* Increased width */
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Added more shadow */
+            border: 1px solid #333333; /* Changed stroke to 1px */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centered the items */
+        }
+        .login-section h2, .signup-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center; /* Centered the text */
+        }
+        .login-section input[type="text"], .signup-section input[type="text"], .signup-section input[type="email"], .signup-section input[type="password"], .login-section input[type="password"], .signup-section input[type="tel"], .signup-section input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px; /* Changed font size */
+            color: #333333; /* Changed text color */
+            background-color: #f9f9f9; /* Changed background color */
+        }
+        .login-section input[type="text"]:focus, .signup-section input[type="text"]:focus, .signup-section input[type="email"]:focus, .signup-section input[type="password"]:focus, .login-section input[type="password"]:focus, .signup-section input[type="tel"]:focus, .signup-section input[type="date"]:focus {
+            border-color: #002702; /* Changed border color on focus */
+            outline: none; /* Removed default outline */
+            box-shadow: 0 0 5px #002702; /* Added box shadow on focus */
+        }
+        .login-section button, .signup-section button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333333;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .login-section a, .signup-section a {
+            display: block;
+            text-align: center;
+            margin-top: 20px; /* Increased margin-top */
+            color: #333333;
+            text-decoration: none;
+        }
+        .footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 40px 50px; /* Increased padding */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer .social-icons a {
+            color: #ffffff;
+            margin-left: 10px;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        .footer .logo img {
+            height: 20px; /* Adjusted the height to make the image smaller */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-section">
+            <p>BEM-VINDO AO</p>
+            <h1>HORTIAPP</h1>
+            <div class="buttons">
+                <button class="login-btn active-btn" onclick="showLogin()">Login</button>
+                <button class="signup-btn" onclick="showSignup()">Cadastre-se</button>
+            </div>
+        </div>
+        <div class="login-section" id="login-section">
+            <h2>LOGIN</h2>
+            <input type="text" class="form-control" placeholder="+55 (00) 9 0000-0000">
+            <input type="password" class="form-control" placeholder="Insira sua senha">
+            <button class="btn btn-dark mt-3">Entrar</button>
+            <a href="#">Esqueceu sua senha?</a>
+        </div>
+        <div class="signup-section" id="signup-section" style="display: none;">
+            <h2>CADASTRO</h2>
+            <input type="text" class="form-control" placeholder="Nome Completo">
+            <input type="email" class="form-control" placeholder="Email">
+            <input type="tel" class="form-control" placeholder="Número de Telefone">
+            <input type="text" class="form-control" placeholder="CPF">
+            <input type="date" class="form-control" placeholder="Data de Nascimento">
+            <input type="password" class="form-control" placeholder="Senha">
+            <input type="password" class="form-control" placeholder="Confirme sua senha">
+            <button class="btn btn-dark mt-3">Cadastrar</button>
+            <a href="#" onclick="showLogin()">Já tem uma conta? Faça login</a>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="logo">
+            <img src="https://i.ibb.co/DLffJ0w/HORTI.png" alt="HORTI+ Logo"> <!-- Added logo image -->
+        </div>
+        <div>
+            © 2024 Horti+ • Todos os direitos reservados
+        </div>
+        <div class="social-icons">
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" fill="none">
+                    <path opacity="0.25" d="M44 22.5C44 34.3741 34.3741 44 22.5 44C10.6259 44 1 34.3741 1 22.5C1 10.6259 10.6259 1 22.5 1C34.3741 1 44 10.6259 44 22.5Z" stroke="white" stroke-width="2"/>
+                    <path d="M20.699 29.393L20.6786 23.0961H18V20.3974H20.6786V18.5983C20.6786 16.1702 22.171 15 24.3209 15C25.3507 15 26.2358 15.0772 26.4937 15.1118V17.6493L25.0026 17.65C23.8334 17.65 23.607 18.2097 23.607 19.0312V20.3974H26.9286L26.0357 23.0961H23.607V29.393H20.699Z" fill="white"/>
+                </svg>
+            </a>
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" fill="none">
+                    <path opacity="0.25" d="M44 22.5C44 34.3741 34.3741 44 22.5 44C10.6259 44 1 34.3741 1 22.5C1 10.6259 10.6259 1 22.5 1C34.3741 1 44 10.6259 44 22.5Z" stroke="white" stroke-width="2"/>
+                    <path d="M25.8678 19.9423C26.2986 19.9423 26.6478 19.593 26.6478 19.1623C26.6478 18.7315 26.2986 18.3823 25.8678 18.3823C25.437 18.3823 25.0878 18.7315 25.0878 19.1623C25.0878 19.593 25.437 19.9423 25.8678 19.9423Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M19.25 22.5C19.25 24.2924 20.7076 25.75 22.5 25.75C24.2924 25.75 25.75 24.2924 25.75 22.5C25.75 20.7076 24.2924 19.25 22.5 19.25C20.7076 19.25 19.25 20.7076 19.25 22.5ZM20.875 22.5C20.875 21.6038 21.6038 20.875 22.5 20.875C23.3962 20.875 24.125 21.6038 24.125 22.5C24.125 23.3962 23.3962 24.125 22.5 24.125C21.6038 24.125 20.875 23.3962 20.875 22.5Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M19.25 29H25.75C27.4205 29 29 27.4205 29 25.75V19.25C29 17.5795 27.4205 16 25.75 16H19.25C17.5795 16 16 17.5795 16 19.25V25.75C16 27.4205 17.5795 29 19.25 29ZM17.625 19.25C17.625 18.4903 18.4903 17.625 19.25 17.625H25.75C26.5097 17.625 27.375 18.4903 27.375 19.25V25.75C27.375 26.5097 26.5097 27.375 25.75 27.375H19.25C18.4757 27.375 17.625 26.5243 17.625 25.75V19.25Z" fill="white"/>
+                </svg>
+            </a>
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" fill="none">
+  <path opacity="0.25" d="M43.875 22.5C43.875 34.3051 34.3051 43.875 22.5 43.875C10.6949 43.875 1.125 34.3051 1.125 22.5C1.125 10.6949 10.6949 1.125 22.5 1.125C34.3051 1.125 43.875 10.6949 43.875 22.5Z" stroke="white" stroke-width="2.25"/>
+  <path d="M17.6875 19.375C18.6195 19.375 19.375 18.6195 19.375 17.6875C19.375 16.7555 18.6195 16 17.6875 16C16.7555 16 16 16.7555 16 17.6875C16 18.6195 16.7555 19.375 17.6875 19.375Z" fill="white"/>
+  <path d="M19.0938 20.5H16.2812C16.126 20.5 16 20.626 16 20.7812V29.2188C16 29.374 16.126 29.5 16.2812 29.5H19.0938C19.249 29.5 19.375 29.374 19.375 29.2188V20.7812C19.375 20.626 19.249 20.5 19.0938 20.5Z" fill="white"/>
+  <path d="M27.4733 20.1124C26.2712 19.7007 24.7677 20.0624 23.866 20.7109C23.8351 20.59 23.7248 20.5 23.5938 20.5H20.7812C20.626 20.5 20.5 20.626 20.5 20.7813V29.2188C20.5 29.374 20.626 29.5 20.7812 29.5H23.5938C23.749 29.5 23.875 29.374 23.875 29.2188V23.155C24.3295 22.7635 24.9151 22.6386 25.3943 22.8423C25.8589 23.0386 26.125 23.5178 26.125 24.1563V29.2188C26.125 29.374 26.251 29.5 26.4062 29.5H29.2188C29.374 29.5 29.5 29.374 29.5 29.2188V23.5898C29.4679 21.2785 28.3806 20.4229 27.4733 20.1124Z" fill="white"/>
+</svg>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <script>
+        function showSignup() {
+            document.getElementById('login-section').style.display = 'none';
+            document.getElementById('signup-section').style.display = 'flex';
+            document.querySelector('.login-btn').classList.remove('active-btn');
+            document.querySelector('.signup-btn').classList.add('active-btn');
+        }
+
+        function showLogin() {
+            document.getElementById('signup-section').style.display = 'none';
+            document.getElementById('login-section').style.display = 'flex';
+            document.querySelector('.signup-btn').classList.remove('active-btn');
+            document.querySelector('.login-btn').classList.add('active-btn');
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
